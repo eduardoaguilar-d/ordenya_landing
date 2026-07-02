@@ -1,16 +1,53 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Lota Grotesque";
+  src: url("/fonts/LotaGrotesque-Regular.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lota Grotesque";
+  src: url("/fonts/LotaGrotesque-SemiBold.woff2") format("woff2");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lota Grotesque";
+  src: url("/fonts/LotaGrotesque-Black.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --color-brand-50: #ecfdf5;
-  --color-brand-100: #d1fae5;
-  --color-brand-200: #a7f3d0;
-  --color-brand-500: #10b981;
-  --color-brand-600: #059669;
-  --color-brand-700: #047857;
-  --color-brand-800: #065f46;
-  --color-accent-400: #fbbf24;
-  --color-accent-500: #f59e0b;
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-cream: #fff8ee;
+  --color-ink: #242424;
+
+  --color-brand-50: #fff3ec;
+  --color-brand-100: #ffe5d6;
+  --color-brand-200: #ffcdb8;
+  --color-brand-500: #ff6b35;
+  --color-brand-600: #ff6b35;
+  --color-brand-700: #e85a28;
+  --color-brand-800: #c94a1f;
+
+  --color-stone-50: #fff8ee;
+  --color-stone-100: #f5ede3;
+  --color-stone-200: #e8ddd0;
+  --color-stone-300: #d4c9bc;
+  --color-stone-400: #9a9289;
+  --color-stone-500: #6b6560;
+  --color-stone-600: #4a4541;
+  --color-stone-700: #363230;
+  --color-stone-800: #2d2a28;
+  --color-stone-900: #242424;
+
+  --font-sans: "Lota Grotesque", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -20,22 +57,23 @@ html {
 body {
   text-rendering: optimizeLegibility;
   font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
 }
 
-/* Flowbite-inspired utilities */
 .section-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   border-radius: 9999px;
   border: 1px solid var(--color-brand-200);
-  background: linear-gradient(to right, var(--color-brand-50), white);
+  background: linear-gradient(to right, var(--color-brand-50), var(--color-cream));
   padding: 0.375rem 0.875rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-brand-700);
+  color: var(--color-brand-800);
 }
 
 .section-badge::before {
@@ -44,26 +82,26 @@ body {
   height: 0.375rem;
   border-radius: 9999px;
   background: var(--color-brand-600);
-  box-shadow: 0 0 8px var(--color-brand-500);
+  box-shadow: 0 0 8px rgba(255, 107, 53, 0.45);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-800) 50%, #0d9488 100%);
+  background: linear-gradient(135deg, var(--color-brand-600) 0%, var(--color-brand-800) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .mesh-bg {
-  background-color: #fafaf9;
+  background-color: var(--color-cream);
   background-image:
-    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.08) 0px, transparent 45%),
-    radial-gradient(at 80% 100%, rgba(16, 185, 129, 0.06) 0px, transparent 40%);
+    radial-gradient(at 0% 0%, rgba(255, 107, 53, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 107, 53, 0.06) 0px, transparent 45%),
+    radial-gradient(at 80% 100%, rgba(36, 36, 36, 0.04) 0px, transparent 40%);
 }
 
 .grid-dots {
-  background-image: radial-gradient(circle, #d6d3d1 1px, transparent 1px);
+  background-image: radial-gradient(circle, #e8ddd0 1px, transparent 1px);
   background-size: 24px 24px;
   mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
 }
@@ -74,7 +112,7 @@ body {
 
 .card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px -12px rgba(36, 36, 36, 0.12);
 }
 
 @keyframes float {
@@ -87,9 +125,9 @@ body {
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.35); }
-  70% { box-shadow: 0 0 0 10px rgba(5, 150, 105, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.35); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 107, 53, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
 }
 
 .btn-pulse {
@@ -116,7 +154,7 @@ body {
   margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-stone-900);
+  color: var(--color-ink);
 }
 
 .legal-prose h3 {
@@ -124,20 +162,20 @@ body {
   margin-bottom: 0.75rem;
   font-size: 1.0625rem;
   font-weight: 600;
-  color: var(--color-stone-900);
+  color: var(--color-ink);
 }
 
 .legal-prose p {
   margin-bottom: 1rem;
   line-height: 1.75;
-  color: var(--color-stone-700);
+  color: var(--color-stone-600);
 }
 
 .legal-prose ul,
 .legal-prose ol {
   margin-bottom: 1rem;
   padding-left: 1.5rem;
-  color: var(--color-stone-700);
+  color: var(--color-stone-600);
 }
 
 .legal-prose ul {
@@ -165,5 +203,5 @@ body {
 
 .legal-prose strong {
   font-weight: 600;
-  color: var(--color-stone-900);
+  color: var(--color-ink);
 }

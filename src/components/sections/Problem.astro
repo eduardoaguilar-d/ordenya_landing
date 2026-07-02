@@ -4,28 +4,28 @@ import SectionHeading from '../ui/SectionHeading.astro';
 const problems = [
   {
     icon: '💬',
-    color: 'from-red-50 to-white border-red-100',
+    color: 'from-brand-50 to-cream border-brand-100',
     title: 'Pedidos mezclados en el chat',
     description:
       'Mensajes de clientes, promos y conversaciones personales se pierden entre cientos de chats sin leer.',
   },
   {
     icon: '📝',
-    color: 'from-amber-50 to-white border-amber-100',
+    color: 'from-brand-50 to-cream border-brand-200',
     title: 'Anotaciones en papel o memoria',
     description:
       'Copiar pedidos a mano genera errores, olvidos y demoras que frustran a tus clientes.',
   },
   {
     icon: '📊',
-    color: 'from-blue-50 to-white border-blue-100',
+    color: 'from-stone-100 to-cream border-stone-200',
     title: 'Sin control de ventas ni inventario',
     description:
       'No sabes cuánto vendiste hoy, qué producto se acabó ni cuánto gastaste en insumos.',
   },
   {
     icon: '⏱️',
-    color: 'from-purple-50 to-white border-purple-100',
+    color: 'from-brand-100 to-cream border-brand-200',
     title: 'Horas perdidas respondiendo lo mismo',
     description:
       'Preguntas repetidas sobre menú, precios y horarios consumen tiempo que deberías usar en cocinar.',
@@ -51,7 +51,7 @@ const problems = [
             ]}
           >
             <span
-              class="flex size-12 shrink-0 items-center justify-center rounded-xl border border-stone-200/80 bg-white text-2xl shadow-sm transition-transform group-hover:scale-110"
+              class="flex size-12 shrink-0 items-center justify-center rounded-xl border border-stone-200 bg-cream text-2xl shadow-sm transition-transform group-hover:scale-110"
               aria-hidden="true"
             >
               {problem.icon}

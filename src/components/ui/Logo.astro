@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = 'h-9 w-auto' } = Astro.props;
+---
+
+<img
+  src="/logo-horizontal.webp"
+  alt="OrdenYa — Todos tus pedidos, en orden"
+  class={className}
+  width="200"
+  height="36"
+  decoding="async"
+/>
