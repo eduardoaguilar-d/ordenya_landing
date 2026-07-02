@@ -1,0 +1,28 @@
+---
+const categories = [
+  { label: 'Taquerías', emoji: '🌮' },
+  { label: 'Burgers', emoji: '🍔' },
+  { label: 'Cafeterías', emoji: '☕' },
+  { label: 'Pizzerías', emoji: '🍕' },
+  { label: 'Sushi', emoji: '🍣' },
+  { label: 'Dark kitchen', emoji: '🏪' },
+];
+---
+
+<section class="border-y border-stone-200/80 bg-white py-10">
+  <div class="mx-auto max-w-6xl px-6">
+    <p class="text-center text-sm font-medium text-stone-500">
+      Diseñado para negocios de comida que venden por <span class="font-semibold text-brand-600">WhatsApp</span>
+    </p>
+    <ul class="mt-6 flex flex-wrap items-center justify-center gap-3">
+      {
+        categories.map((cat) => (
+          <li class="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-stone-50 px-4 py-2 text-sm font-medium text-stone-700 transition-colors hover:border-brand-200 hover:bg-brand-50 hover:text-brand-800">
+            <span aria-hidden="true">{cat.emoji}</span>
+            {cat.label}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

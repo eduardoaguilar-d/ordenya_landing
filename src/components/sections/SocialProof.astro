@@ -1,0 +1,74 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const testimonials = [
+  {
+    quote:
+      'Antes perdíamos pedidos entre los mensajes. Ahora todo llega al panel y la cocina sabe exactamente qué preparar.',
+    author: 'Carlos M.',
+    business: 'Taquería El Buen Sabor',
+    location: 'San Luis Potosí',
+    initials: 'CM',
+    color: 'bg-brand-100 text-brand-700',
+  },
+  {
+    quote:
+      'Por fin sé cuánto vendo al día y qué productos se acaban. OrdenYa nos dio visibilidad que no teníamos con solo WhatsApp.',
+    author: 'María L.',
+    business: 'Café & Brunch',
+    location: 'Querétaro',
+    initials: 'ML',
+    color: 'bg-amber-100 text-amber-700',
+  },
+  {
+    quote:
+      'Mi equipo puede ver los pedidos sin estar pegados al celular. Confirmamos más rápido y los clientes están más contentos.',
+    author: 'Roberto S.',
+    business: 'Burger House',
+    location: 'León',
+    initials: 'RS',
+    color: 'bg-violet-100 text-violet-700',
+  },
+];
+---
+
+<section class="mesh-bg py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading
+      eyebrow="Testimonios"
+      title="Restaurantes que ya operan con orden"
+    />
+
+    <ul class="mt-16 grid gap-6 md:grid-cols-3">
+      {
+        testimonials.map((item) => (
+          <li class="card-hover flex flex-col rounded-2xl border border-stone-200/80 bg-white p-6 shadow-sm">
+            <div class="flex gap-0.5 text-accent-500" aria-label="5 de 5 estrellas">
+              {[...Array(5)].map(() => (
+                <svg class="size-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="mt-5 flex-1 text-base leading-relaxed text-stone-700">
+              "{item.quote}"
+            </blockquote>
+            <footer class="mt-6 flex items-center gap-3 border-t border-stone-100 pt-5">
+              <span
+                class:list={['flex size-10 items-center justify-center rounded-full text-sm font-bold', item.color]}
+              >
+                {item.initials}
+              </span>
+              <div>
+                <p class="font-bold text-stone-900">{item.author}</p>
+                <p class="text-sm text-stone-500">
+                  {item.business} · {item.location}
+                </p>
+              </div>
+            </footer>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

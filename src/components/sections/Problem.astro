@@ -1,0 +1,68 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const problems = [
+  {
+    icon: '💬',
+    color: 'from-red-50 to-white border-red-100',
+    title: 'Pedidos mezclados en el chat',
+    description:
+      'Mensajes de clientes, promos y conversaciones personales se pierden entre cientos de chats sin leer.',
+  },
+  {
+    icon: '📝',
+    color: 'from-amber-50 to-white border-amber-100',
+    title: 'Anotaciones en papel o memoria',
+    description:
+      'Copiar pedidos a mano genera errores, olvidos y demoras que frustran a tus clientes.',
+  },
+  {
+    icon: '📊',
+    color: 'from-blue-50 to-white border-blue-100',
+    title: 'Sin control de ventas ni inventario',
+    description:
+      'No sabes cuánto vendiste hoy, qué producto se acabó ni cuánto gastaste en insumos.',
+  },
+  {
+    icon: '⏱️',
+    color: 'from-purple-50 to-white border-purple-100',
+    title: 'Horas perdidas respondiendo lo mismo',
+    description:
+      'Preguntas repetidas sobre menú, precios y horarios consumen tiempo que deberías usar en cocinar.',
+  },
+];
+---
+
+<section class="bg-stone-50 py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading
+      eyebrow="El problema"
+      title="WhatsApp vende, pero sin orden pierdes dinero"
+      description="La mayoría de restaurantes reciben pedidos por WhatsApp. El problema no es el canal: es no tener un sistema que organice todo."
+    />
+
+    <ul class="mt-16 grid gap-5 sm:grid-cols-2">
+      {
+        problems.map((problem) => (
+          <li
+            class:list={[
+              'card-hover group flex gap-5 rounded-2xl border bg-gradient-to-br p-6',
+              problem.color,
+            ]}
+          >
+            <span
+              class="flex size-12 shrink-0 items-center justify-center rounded-xl border border-stone-200/80 bg-white text-2xl shadow-sm transition-transform group-hover:scale-110"
+              aria-hidden="true"
+            >
+              {problem.icon}
+            </span>
+            <div>
+              <h3 class="text-lg font-bold text-stone-900">{problem.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-stone-600">{problem.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

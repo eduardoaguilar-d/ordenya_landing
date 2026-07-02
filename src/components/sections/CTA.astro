@@ -1,0 +1,43 @@
+---
+import Button from '../ui/Button.astro';
+import WhatsAppButton from '../ui/WhatsAppButton.astro';
+---
+
+<section class="pb-24 pt-4">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-stone-900 via-stone-900 to-brand-900 px-8 py-20 text-center md:px-16">
+      <div
+        class="pointer-events-none absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"
+        aria-hidden="true"
+      />
+      <div
+        class="pointer-events-none absolute -left-20 top-0 size-64 rounded-full bg-brand-500/20 blur-3xl"
+        aria-hidden="true"
+      />
+      <div
+        class="pointer-events-none absolute -bottom-20 -right-20 size-80 rounded-full bg-accent-500/10 blur-3xl"
+        aria-hidden="true"
+      />
+
+      <div class="relative">
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand-200">
+          Empieza hoy
+        </span>
+        <h2 class="mt-6 text-3xl font-extrabold tracking-tight text-white md:text-4xl lg:text-5xl">
+          ¿Listo para dejar de perder pedidos?
+        </h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg text-stone-300">
+          Agenda una demo gratuita y te mostramos cómo OrdenYa puede transformar la operación de tu restaurante en menos
+          de una semana.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <WhatsAppButton label="Agendar demo gratis" class="btn-pulse shadow-lg shadow-brand-600/30" />
+          <Button href="#precios" variant="secondary" class="!border-white/20 !bg-white/10 !text-white hover:!bg-white/20">
+            Ver planes y precios
+          </Button>
+        </div>
+        <p class="mt-6 text-sm text-stone-400">Respuesta en menos de 24 horas · Sin compromiso · 14 días gratis</p>
+      </div>
+    </div>
+  </div>
+</section>

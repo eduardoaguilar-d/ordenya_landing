@@ -1,0 +1,90 @@
+---
+import { SITE } from '../../utils/constants';
+
+const currentYear = new Date().getFullYear();
+
+const productLinks = [
+  { href: '/#funciones', label: 'Funciones' },
+  { href: '/#como-funciona', label: 'Cómo funciona' },
+  { href: '/#precios', label: 'Precios' },
+  { href: '/#faq', label: 'FAQ' },
+];
+
+const legalLinks = [
+  { href: SITE.urls.privacy, label: 'Aviso de privacidad' },
+  { href: SITE.urls.terms, label: 'Términos y condiciones' },
+  { href: SITE.urls.dataDeletion, label: 'Eliminación de datos' },
+  { href: SITE.urls.cookies, label: 'Política de cookies' },
+];
+---
+
+<footer class="border-t border-stone-200 bg-white py-12">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="/" class="flex items-center gap-2 font-bold text-stone-900">
+          <span
+            class="flex size-8 items-center justify-center rounded-lg bg-brand-600 text-xs font-bold text-white"
+            aria-hidden="true"
+          >
+            OY
+          </span>
+          {SITE.name}
+        </a>
+        <p class="mt-3 max-w-xs text-sm text-stone-600">
+          Pedidos por WhatsApp, ventas, inventario y egresos en una sola plataforma para restaurantes.
+        </p>
+        <p class="mt-3 text-sm">
+          <a href={`mailto:${SITE.email}`} class="text-stone-600 transition-colors hover:text-stone-900">
+            {SITE.email}
+          </a>
+        </p>
+      </div>
+
+      <nav aria-label="Producto">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-wide text-stone-400">Producto</p>
+        <ul class="space-y-2">
+          {
+            productLinks.map((link) => (
+              <li>
+                <a href={link.href} class="text-sm text-stone-600 transition-colors hover:text-stone-900">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <nav aria-label="Legal">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-wide text-stone-400">Legal</p>
+        <ul class="space-y-2">
+          {
+            legalLinks.map((link) => (
+              <li>
+                <a href={link.href} class="text-sm text-stone-600 transition-colors hover:text-stone-900">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-wide text-stone-400">Apps</p>
+        <p class="text-sm text-stone-600">
+          Disponible en web, iOS y Android. Descarga próximamente en tiendas de aplicaciones.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-stone-100 pt-8 text-sm text-stone-500 md:flex-row">
+      <p>© {currentYear} {SITE.name}. Todos los derechos reservados.</p>
+      <p>
+        <a href={SITE.url} class="hover:text-stone-700">{SITE.url.replace('https://', '')}</a>
+        · Hecho para restaurantes en México
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,128 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import LegalDocumentHeader from '../components/legal/LegalDocumentHeader.astro';
+import { SITE, LEGAL_URLS } from '../utils/constants';
+---
+
+<LegalLayout
+  title="Términos y condiciones"
+  description="Términos y condiciones de uso de OrdenYa para restaurantes, negocios de comida y aplicaciones móviles."
+  canonicalPath={SITE.urls.terms}
+>
+  <LegalDocumentHeader title="Términos y condiciones de uso" />
+
+  <p>
+    Al acceder o utilizar {SITE.name} — incluyendo el sitio web <a href={SITE.url}>{SITE.url}</a>, la plataforma web,
+    las aplicaciones móviles y la integración con WhatsApp — aceptas estos Términos y Condiciones. Si no estás de
+    acuerdo, no utilices el servicio.
+  </p>
+
+  <h2>1. Definiciones</h2>
+  <ul>
+    <li><strong>Servicio:</strong> la plataforma {SITE.name} y sus funcionalidades asociadas.</li>
+    <li><strong>Usuario o Cliente:</strong> persona física o moral que contrata el servicio para su negocio.</li>
+    <li><strong>Usuario final:</strong> comensal o cliente que realiza pedidos vía WhatsApp u otros canales.</li>
+    <li><strong>Contenido:</strong> datos, mensajes, menús, precios e información cargada en la plataforma.</li>
+  </ul>
+
+  <h2>2. Descripción del servicio</h2>
+  <p>
+    {SITE.name} es una herramienta de gestión para restaurantes y negocios de comida que permite recibir y administrar
+    pedidos, principalmente a través de WhatsApp, así como controlar ventas, inventario y egresos. El servicio se
+    ofrece en modalidad web y aplicaciones móviles complementarias.
+  </p>
+
+  <h2>3. Registro y cuenta</h2>
+  <ul>
+    <li>Debes proporcionar información veraz y mantenerla actualizada.</li>
+    <li>Eres responsable de la confidencialidad de tus credenciales de acceso.</li>
+    <li>Debes notificarnos de inmediato cualquier uso no autorizado de tu cuenta.</li>
+    <li>Una cuenta representa un negocio; el titular es responsable de las acciones de sus usuarios autorizados.</li>
+  </ul>
+
+  <h2>4. Uso aceptable</h2>
+  <p>Te comprometes a no:</p>
+  <ul>
+    <li>Utilizar el servicio para actividades ilegales o no autorizadas</li>
+    <li>Enviar spam, mensajes masivos no solicitados o contenido engañoso por WhatsApp</li>
+    <li>Violar las políticas de WhatsApp, Meta o cualquier ley de protección al consumidor</li>
+    <li>Intentar acceder sin autorización a sistemas, cuentas o datos de terceros</li>
+    <li>Realizar ingeniería inversa, copiar o revender el servicio sin autorización</li>
+    <li>Sobrecargar o interferir con la infraestructura del servicio</li>
+  </ul>
+
+  <h2>5. Integración con WhatsApp y Meta</h2>
+  <p>
+    El uso de la integración con WhatsApp Business API está sujeto a la aprobación de Meta, al cumplimiento de sus
+    políticas comerciales y a las
+    <a href="https://www.whatsapp.com/legal/business-policy" target="_blank" rel="noopener noreferrer"
+      >Políticas comerciales de WhatsApp</a
+    >. {SITE.name} no garantiza la aprobación permanente de plantillas, números o cuentas de WhatsApp Business. Eres
+    responsable del contenido de los mensajes que envías a tus clientes.
+  </p>
+
+  <h2>6. Planes, pagos y facturación</h2>
+  <ul>
+    <li>Los precios publicados en el sitio pueden cambiar con previo aviso.</li>
+    <li>Los planes de pago se facturan de forma recurrente según el ciclo contratado.</li>
+    <li>El periodo de prueba gratuito, si aplica, no requiere tarjeta salvo indicación contraria.</li>
+    <li>No hay reembolsos por periodos parciales ya transcurridos, salvo disposición legal en contrario.</li>
+  </ul>
+
+  <h2>7. Propiedad intelectual</h2>
+  <p>
+    {SITE.name}, su marca, software, diseño y documentación son propiedad de {SITE.legalName} o sus licenciantes. El
+    Cliente conserva la propiedad de su Contenido (menús, datos de clientes, etc.) y nos otorga una licencia limitada
+    para procesarlo con el fin de prestar el servicio.
+  </p>
+
+  <h2>8. Privacidad y datos personales</h2>
+  <p>
+    El tratamiento de datos personales se rige por nuestro
+    <a href={LEGAL_URLS.privacy}>Aviso de privacidad</a>. Como Cliente, eres responsable de informar a tus usuarios
+    finales sobre el tratamiento de sus datos y de contar con las bases legales aplicables para contactarlos por
+    WhatsApp.
+  </p>
+
+  <h2>9. Disponibilidad y modificaciones</h2>
+  <p>
+    Nos esforzamos por mantener el servicio disponible, pero no garantizamos operación ininterrumpida. Podemos
+    modificar, suspender o discontinuar funcionalidades con aviso razonable. Las integraciones con terceros (Meta,
+    WhatsApp, proveedores de pago) pueden verse afectadas por cambios fuera de nuestro control.
+  </p>
+
+  <h2>10. Limitación de responsabilidad</h2>
+  <p>
+    En la medida permitida por la ley, {SITE.name} no será responsable por daños indirectos, pérdida de ganancias,
+    pérdida de datos o interrupciones derivadas del uso del servicio, fallas de WhatsApp/Meta, errores del Cliente en
+    la operación del negocio o fuerza mayor. Nuestra responsabilidad total se limitará al monto pagado por el Cliente
+    en los últimos 12 meses.
+  </p>
+
+  <h2>11. Terminación</h2>
+  <p>
+    Puedes cancelar tu cuenta en cualquier momento desde la plataforma o contactándonos. Podemos suspender o terminar
+    el acceso si incumples estos términos o las políticas de WhatsApp/Meta. Tras la terminación, aplicará nuestra
+    <a href={LEGAL_URLS.dataDeletion}>política de eliminación de datos</a>.
+  </p>
+
+  <h2>12. Aplicaciones móviles</h2>
+  <p>
+    Las apps móviles de {SITE.name} son complemento del servicio web. Su uso implica la aceptación de estos mismos
+    términos, así como los términos de las tiendas de aplicaciones (App Store, Google Play) cuando corresponda.
+    Requieres conexión a internet para la mayoría de las funciones.
+  </p>
+
+  <h2>13. Ley aplicable y jurisdicción</h2>
+  <p>
+    Estos términos se rigen por las leyes de los Estados Unidos Mexicanos. Para cualquier controversia, las partes se
+    someten a los tribunales competentes de San Luis Potosí, S.L.P., renunciando a cualquier otro fuero que pudiera
+    corresponderles.
+  </p>
+
+  <h2>14. Contacto</h2>
+  <p>
+    <a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />
+    <a href={SITE.url}>{SITE.url}</a>
+  </p>
+</LegalLayout>

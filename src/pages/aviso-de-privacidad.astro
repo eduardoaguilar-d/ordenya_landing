@@ -1,0 +1,177 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import LegalDocumentHeader from '../components/legal/LegalDocumentHeader.astro';
+import { SITE, LEGAL_URLS } from '../utils/constants';
+---
+
+<LegalLayout
+  title="Aviso de privacidad"
+  description="Aviso de privacidad de OrdenYa. Conoce cómo tratamos tus datos en la web, apps móviles e integración con WhatsApp."
+  canonicalPath={SITE.urls.privacy}
+>
+  <LegalDocumentHeader title="Aviso de privacidad" />
+
+  <p>
+    En cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y
+    demás normativa aplicable en México, {SITE.legalName} («{SITE.name}», «nosotros») pone a tu disposición el presente
+    Aviso de Privacidad.
+  </p>
+
+  <h2>1. Responsable del tratamiento</h2>
+  <p>
+    <strong>{SITE.legalName}</strong><br />
+    Sitio web: <a href={SITE.url}>{SITE.url}</a><br />
+    Correo de contacto: <a href={`mailto:${SITE.email}`}>{SITE.email}</a><br />
+    Correo de privacidad: <a href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a>
+  </p>
+
+  <h2>2. Alcance</h2>
+  <p>Este aviso aplica a:</p>
+  <ul>
+    <li>El sitio web <a href={SITE.url}>{SITE.url}</a></li>
+    <li>Las aplicaciones móviles de {SITE.name} (iOS y Android)</li>
+    <li>La plataforma web de administración para restaurantes y negocios de comida</li>
+    <li>La integración con WhatsApp Business API y servicios de Meta Platforms, Inc.</li>
+  </ul>
+
+  <h2>3. Datos personales que recopilamos</h2>
+  <p>Podemos recopilar las siguientes categorías de datos, según el servicio que utilices:</p>
+
+  <h3>3.1 Datos de restaurantes y usuarios del negocio</h3>
+  <ul>
+    <li>Nombre, correo electrónico y teléfono del responsable o empleados</li>
+    <li>Nombre comercial, dirección y datos fiscales del negocio</li>
+    <li>Credenciales de acceso (usuario y contraseña cifrada)</li>
+    <li>Registros de actividad en la plataforma (pedidos, ventas, inventario, egresos)</li>
+  </ul>
+
+  <h3>3.2 Datos de clientes finales (comensales)</h3>
+  <ul>
+    <li>Nombre y número de teléfono obtenidos a través de conversaciones de WhatsApp</li>
+    <li>Contenido de mensajes y pedidos enviados por WhatsApp</li>
+    <li>Dirección de entrega, cuando el cliente la proporcione</li>
+  </ul>
+
+  <h3>3.3 Datos técnicos y de dispositivos</h3>
+  <ul>
+    <li>Dirección IP, tipo de navegador, sistema operativo y dispositivo</li>
+    <li>Identificadores de sesión, cookies y tecnologías similares</li>
+    <li>Token de notificaciones push en apps móviles</li>
+    <li>Registros de errores y diagnóstico para mejorar el servicio</li>
+  </ul>
+
+  <h3>3.4 Datos de WhatsApp y Meta</h3>
+  <p>
+    Al conectar tu número de WhatsApp Business con {SITE.name}, procesamos datos conforme a las políticas de Meta y a
+    los permisos que autorices en Meta for Developers, incluyendo:
+  </p>
+  <ul>
+    <li>Mensajes entrantes y salientes relacionados con pedidos</li>
+    <li>Metadatos de conversación (fecha, estado de entrega, número de teléfono)</li>
+    <li>Identificadores de cuenta de WhatsApp Business (WABA ID, Phone Number ID)</li>
+    <li>Plantillas de mensajes y estados de aprobación, cuando aplique</li>
+  </ul>
+  <p>
+    El uso de la API de WhatsApp está sujeto también a las
+    <a href="https://www.whatsapp.com/legal/business-terms" target="_blank" rel="noopener noreferrer"
+      >Condiciones comerciales de WhatsApp</a
+    >
+    y a la
+    <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer"
+      >Política de privacidad de Meta</a
+    >.
+  </p>
+
+  <h2>4. Finalidades del tratamiento</h2>
+  <p>Utilizamos tus datos para:</p>
+  <ul>
+    <li>Proveer, operar y mantener la plataforma {SITE.name}</li>
+    <li>Recibir, organizar y administrar pedidos provenientes de WhatsApp</li>
+    <li>Gestionar ventas, inventario, egresos y reportes del negocio</li>
+    <li>Autenticar usuarios y garantizar la seguridad de las cuentas</li>
+    <li>Enviar notificaciones operativas y alertas de pedidos (web y móvil)</li>
+    <li>Brindar soporte técnico y atención al cliente</li>
+    <li>Cumplir obligaciones legales y resolver disputas</li>
+    <li>Mejorar nuestros productos mediante análisis agregados y anonimizados</li>
+  </ul>
+  <p>
+    Las finalidades marcadas como necesarias para la relación contractual no requieren consentimiento adicional. Para
+    finalidades secundarias (como comunicaciones comerciales), solicitaremos tu consentimiento cuando la ley lo exija.
+  </p>
+
+  <h2>5. Transferencia y compartición de datos</h2>
+  <p>Podemos compartir datos con:</p>
+  <ul>
+    <li>
+      <strong>Meta Platforms, Inc.</strong> — para operar la integración con WhatsApp Business API
+    </li>
+    <li>
+      <strong>Proveedores de infraestructura</strong> — hosting, bases de datos, almacenamiento y monitoreo (bajo
+      contratos de confidencialidad)
+    </li>
+    <li>
+      <strong>Procesadores de pago</strong> — cuando contrates planes de pago (no almacenamos datos completos de
+      tarjetas)
+    </li>
+    <li>
+      <strong>Autoridades competentes</strong> — cuando exista requerimiento legal válido
+    </li>
+  </ul>
+  <p>No vendemos datos personales a terceros.</p>
+
+  <h2>6. Conservación de datos</h2>
+  <p>
+    Conservamos los datos mientras mantengas una cuenta activa o sea necesario para cumplir las finalidades descritas.
+    Tras la cancelación del servicio, podemos retener ciertos datos durante los plazos legales aplicables o hasta que
+    solicites su eliminación conforme a la sección de derechos y a nuestra
+    <a href={LEGAL_URLS.dataDeletion}>política de eliminación de datos</a>.
+  </p>
+
+  <h2>7. Derechos ARCO y revocación del consentimiento</h2>
+  <p>Tienes derecho a:</p>
+  <ul>
+    <li><strong>Acceder</strong> a tus datos personales</li>
+    <li><strong>Rectificarlos</strong> cuando sean inexactos o incompletos</li>
+    <li><strong>Cancelarlos</strong> cuando ya no sean necesarios</li>
+    <li><strong>Oponerte</strong> al tratamiento para finalidades específicas</li>
+    <li><strong>Revocar</strong> el consentimiento otorgado</li>
+    <li><strong>Limitar</strong> el uso o divulgación de tus datos</li>
+  </ul>
+  <p>
+    Para ejercer estos derechos, envía una solicitud a
+    <a href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a> con tu nombre, medio de contacto y descripción
+    clara de tu solicitud. Responderemos en un plazo máximo de 20 días hábiles.
+  </p>
+
+  <h2>8. Cookies y tecnologías similares</h2>
+  <p>
+    Utilizamos cookies y tecnologías similares en el sitio web. Consulta nuestra
+    <a href={LEGAL_URLS.cookies}>Política de cookies</a> para más detalle.
+  </p>
+
+  <h2>9. Seguridad</h2>
+  <p>
+    Implementamos medidas técnicas, administrativas y físicas razonables para proteger los datos personales, incluyendo
+    cifrado en tránsito (HTTPS/TLS), control de acceso y respaldos. Ningún sistema es 100% seguro; te recomendamos
+    usar contraseñas robustas y no compartir credenciales.
+  </p>
+
+  <h2>10. Menores de edad</h2>
+  <p>
+    {SITE.name} está dirigido a negocios y mayores de edad. No recopilamos intencionalmente datos de menores de 18
+    años. Si detectamos dicha información, la eliminaremos de forma diligente.
+  </p>
+
+  <h2>11. Cambios a este aviso</h2>
+  <p>
+    Podemos actualizar este Aviso de Privacidad. Publicaremos la versión vigente en
+    <a href={LEGAL_URLS.privacy}>{LEGAL_URLS.privacy}</a> e indicaremos la fecha de última actualización. Los cambios
+    sustanciales serán notificados por correo o dentro de la plataforma cuando corresponda.
+  </p>
+
+  <h2>12. Contacto</h2>
+  <p>
+    Para dudas sobre privacidad o el tratamiento de datos:<br />
+    <a href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a>
+  </p>
+</LegalLayout>

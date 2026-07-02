@@ -1,0 +1,122 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import LegalDocumentHeader from '../components/legal/LegalDocumentHeader.astro';
+import { SITE, LEGAL_URLS } from '../utils/constants';
+---
+
+<LegalLayout
+  title="Eliminación de datos"
+  description="Instrucciones para solicitar la eliminación de datos personales en OrdenYa. Requerido para Meta Developer y WhatsApp Business API."
+  canonicalPath={SITE.urls.dataDeletion}
+>
+  <LegalDocumentHeader title="Instrucciones de eliminación de datos" />
+
+  <p>
+    En {SITE.name} respetamos tu derecho a solicitar la eliminación de tus datos personales. Esta página cumple con los
+    requisitos de Meta for Developers para aplicaciones que utilizan la API de WhatsApp Business y otros productos de
+    Meta.
+  </p>
+
+  <h2>1. ¿Quién puede solicitar la eliminación?</h2>
+  <ul>
+    <li>
+      <strong>Dueños o administradores de restaurantes</strong> que tienen una cuenta en {SITE.name}
+    </li>
+    <li>
+      <strong>Empleados o usuarios</strong> con acceso a la plataforma o apps móviles de {SITE.name}
+    </li>
+    <li>
+      <strong>Clientes finales (comensales)</strong> cuyos datos fueron procesados a través de un restaurante que usa
+      {SITE.name} y WhatsApp
+    </li>
+    <li>
+      <strong>Usuarios de Meta/WhatsApp</strong> que interactuaron con un negocio conectado a nuestra plataforma
+    </li>
+  </ul>
+
+  <h2>2. Cómo solicitar la eliminación</h2>
+
+  <h3>Opción A — Por correo electrónico (recomendado)</h3>
+  <p>Envía un correo a <a href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a> con:</p>
+  <ol>
+    <li>Asunto: «Solicitud de eliminación de datos»</li>
+    <li>Tu nombre completo</li>
+    <li>Número de teléfono o correo asociado a tu cuenta o pedido</li>
+    <li>Nombre del restaurante (si aplica)</li>
+    <li>Descripción de los datos que deseas eliminar</li>
+    <li>Copia de identificación oficial (solo si es necesario para verificar tu identidad)</li>
+  </ol>
+
+  <h3>Opción B — Desde la plataforma (cuentas de negocio)</h3>
+  <p>Si eres administrador de un restaurante en {SITE.name}:</p>
+  <ol>
+    <li>Inicia sesión en la plataforma web o app móvil</li>
+    <li>Ve a <strong>Configuración → Cuenta → Eliminar cuenta</strong></li>
+    <li>Confirma la solicitud siguiendo las instrucciones en pantalla</li>
+  </ol>
+  <p>
+    La eliminación de la cuenta del negocio iniciará el proceso de borrado de datos asociados, sujeto a los plazos
+    legales de retención.
+  </p>
+
+  <h3>Opción C — Desde Meta (usuarios de WhatsApp)</h3>
+  <p>
+    Si deseas eliminar datos relacionados con tu interacción en WhatsApp con un negocio que usa {SITE.name}, también
+    puedes gestionar tus preferencias de privacidad directamente en
+    <a href="https://www.facebook.com/settings?tab=applications" target="_blank" rel="noopener noreferrer"
+      >Configuración de apps y sitios web de Meta</a
+    >
+    o contactarnos en <a href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a> indicando el número de teléfono
+    y el restaurante involucrado.
+  </p>
+
+  <h2>3. ¿Qué datos se eliminan?</h2>
+  <p>Según el tipo de solicitud, podemos eliminar:</p>
+  <ul>
+    <li>Datos de cuenta (nombre, correo, teléfono, credenciales)</li>
+    <li>Historial de pedidos y mensajes almacenados en {SITE.name}</li>
+    <li>Datos de clientes finales asociados a tu negocio (a solicitud del titular o del propio titular de los datos)</li>
+    <li>Tokens de sesión, dispositivos móviles registrados y preferencias</li>
+    <li>Registros de actividad no sujetos a retención legal obligatoria</li>
+  </ul>
+
+  <h2>4. Datos que podemos conservar</h2>
+  <p>Podemos retener ciertos datos cuando:</p>
+  <ul>
+    <li>Exista obligación legal o fiscal de conservación (facturación, contabilidad)</li>
+    <li>Sea necesario para resolver disputas, hacer cumplir acuerdos o proteger derechos legales</li>
+    <li>Los datos estén anonimizados de forma irreversible</li>
+  </ul>
+
+  <h2>5. Plazos de respuesta</h2>
+  <ul>
+    <li><strong>Confirmación de recepción:</strong> dentro de 5 días hábiles</li>
+    <li><strong>Eliminación efectiva:</strong> dentro de 30 días hábiles tras verificar tu identidad</li>
+    <li>
+      <strong>Datos en respaldos:</strong> se purgarán en el siguiente ciclo de rotación de respaldos (máximo 90 días)
+    </li>
+  </ul>
+
+  <h2>6. Callback de eliminación de datos (Meta Developer)</h2>
+  <p>
+    Para integraciones con Meta, esta URL puede registrarse como página de instrucciones de eliminación de datos en la
+    configuración de tu app en
+    <a href="https://developers.facebook.com/" target="_blank" rel="noopener noreferrer">Meta for Developers</a>:
+  </p>
+  <p>
+    <strong>URL de instrucciones:</strong>
+    <a href={LEGAL_URLS.dataDeletion}>{LEGAL_URLS.dataDeletion}</a>
+  </p>
+  <p>
+    Si tu app de Meta requiere un <em>Data Deletion Callback URL</em> automatizado (endpoint POST), deberás configurarlo
+    en tu backend de {SITE.name} (API Laravel). Esta página cubre el flujo manual e instrucciones para usuarios finales.
+  </p>
+
+  <h2>7. Contacto</h2>
+  <p>
+    <strong>Correo de privacidad:</strong>
+    <a href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a><br />
+    <strong>Sitio web:</strong> <a href={SITE.url}>{SITE.url}</a><br />
+    <strong>Aviso de privacidad:</strong> <a href={LEGAL_URLS.privacy}>{LEGAL_URLS.privacy}</a>
+  </p>
+</LegalLayout>

@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import Hero from '../components/sections/Hero.astro';
+import TrustBar from '../components/sections/TrustBar.astro';
+import Problem from '../components/sections/Problem.astro';
+import Features from '../components/sections/Features.astro';
+import HowItWorks from '../components/sections/HowItWorks.astro';
+import SocialProof from '../components/sections/SocialProof.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import CTA from '../components/sections/CTA.astro';
+import Footer from '../components/sections/Footer.astro';
+import { SITE } from '../utils/constants';
+
+const title = `${SITE.name} | Pedidos por WhatsApp para restaurantes`;
+---
+
+<BaseLayout title={title} description={SITE.description}>
+  <Header />
+  <main>
+    <Hero />
+    <TrustBar />
+    <Problem />
+    <Features />
+    <HowItWorks />
+    <SocialProof />
+    <Pricing />
+    <FAQ />
+    <CTA />
+  </main>
+  <Footer />
+</BaseLayout>

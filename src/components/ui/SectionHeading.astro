@@ -1,0 +1,19 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description?: string;
+  align?: 'center' | 'left';
+}
+
+const { eyebrow, title, description, align = 'center' } = Astro.props;
+const alignClass = align === 'center' ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl';
+---
+
+<div class={alignClass}>
+  <span class="section-badge">{eyebrow}</span>
+  <h2 class="mt-4 text-3xl font-bold tracking-tight text-stone-900 md:text-4xl lg:text-[2.75rem] lg:leading-tight">
+    {title}
+  </h2>
+  {description && <p class="mt-4 text-lg leading-relaxed text-stone-600">{description}</p>}
+</div>

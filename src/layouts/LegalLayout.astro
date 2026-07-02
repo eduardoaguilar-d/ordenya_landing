@@ -1,0 +1,24 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import LegalHeader from '../components/legal/LegalHeader.astro';
+import Footer from '../components/sections/Footer.astro';
+import { SITE } from '../utils/constants';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+}
+
+const { title, description, canonicalPath } = Astro.props;
+const fullTitle = `${title} | ${SITE.name}`;
+const canonical = `${SITE.url}${canonicalPath}`;
+---
+
+<BaseLayout title={fullTitle} description={description} canonical={canonical}>
+  <LegalHeader />
+  <main class="legal-prose mx-auto max-w-3xl px-6 py-12 md:py-16">
+    <slot />
+  </main>
+  <Footer />
+</BaseLayout>

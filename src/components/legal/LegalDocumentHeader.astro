@@ -1,0 +1,15 @@
+---
+import { SITE } from '../../utils/constants';
+
+interface Props {
+  title: string;
+  lastUpdated?: string;
+}
+
+const { title, lastUpdated = SITE.legalLastUpdated } = Astro.props;
+---
+
+<header class="mb-10 border-b border-stone-200 pb-8">
+  <h1 class="text-3xl font-bold tracking-tight text-stone-900 md:text-4xl">{title}</h1>
+  <p class="mt-3 text-sm text-stone-500">Última actualización: {lastUpdated}</p>
+</header>

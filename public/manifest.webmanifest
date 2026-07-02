@@ -1,0 +1,32 @@
+{
+  "name": "OrdenYa",
+  "short_name": "OrdenYa",
+  "description": "Pedidos por WhatsApp para restaurantes. Administra ventas, inventario y egresos.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fafaf9",
+  "theme_color": "#059669",
+  "lang": "es-MX",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=app.ordenya.mobile",
+      "id": "app.ordenya.mobile"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/idAPP_STORE_ID"
+    }
+  ],
+  "prefer_related_applications": false
+}

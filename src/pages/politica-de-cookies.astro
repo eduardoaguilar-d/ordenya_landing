@@ -1,0 +1,94 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import LegalDocumentHeader from '../components/legal/LegalDocumentHeader.astro';
+import { SITE, LEGAL_URLS } from '../utils/constants';
+---
+
+<LegalLayout
+  title="Política de cookies"
+  description="Política de cookies de OrdenYa. Información sobre el uso de cookies en ordenya.app y aplicaciones relacionadas."
+  canonicalPath={SITE.urls.cookies}
+>
+  <LegalDocumentHeader title="Política de cookies" />
+
+  <p>
+    Esta Política de cookies explica cómo {SITE.name} («nosotros») utiliza cookies y tecnologías similares en
+    <a href={SITE.url}>{SITE.url}</a> y servicios relacionados.
+  </p>
+
+  <h2>1. ¿Qué son las cookies?</h2>
+  <p>
+    Las cookies son archivos de texto pequeños que se almacenan en tu navegador o dispositivo cuando visitas un sitio
+    web. Nos permiten recordar preferencias, mantener sesiones activas y entender cómo se utiliza el sitio.
+  </p>
+
+  <h2>2. Tipos de cookies que utilizamos</h2>
+
+  <h3>2.1 Cookies estrictamente necesarias</h3>
+  <p>Esenciales para el funcionamiento del sitio y la plataforma. No requieren consentimiento.</p>
+  <ul>
+    <li>Autenticación y sesión de usuario</li>
+    <li>Seguridad y prevención de fraude</li>
+    <li>Balanceo de carga y disponibilidad</li>
+  </ul>
+
+  <h3>2.2 Cookies de rendimiento y análisis</h3>
+  <p>Nos ayudan a entender cómo los visitantes interactúan con el sitio (páginas visitadas, tiempo, errores).</p>
+  <ul>
+    <li>Analítica web agregada y anonimizada</li>
+    <li>Medición de rendimiento y estabilidad</li>
+  </ul>
+
+  <h3>2.3 Cookies de funcionalidad</h3>
+  <p>Permiten recordar tus preferencias para mejorar la experiencia.</p>
+  <ul>
+    <li>Idioma y configuración de interfaz</li>
+    <li>Preferencias de notificación en la web</li>
+  </ul>
+
+  <h3>2.4 Cookies de terceros</h3>
+  <p>Establecidas por servicios externos que integramos:</p>
+  <ul>
+    <li>Meta / WhatsApp — cuando utilizas funciones de integración o widgets relacionados</li>
+    <li>Proveedores de analítica — si están habilitados en el sitio</li>
+    <li>Procesadores de pago — al contratar planes de pago</li>
+  </ul>
+
+  <h2>3. Tecnologías similares</h2>
+  <p>Además de cookies, podemos usar:</p>
+  <ul>
+    <li><strong>Local Storage / Session Storage</strong> — para preferencias de la aplicación web</li>
+    <li><strong>Identificadores de dispositivo</strong> — en apps móviles para notificaciones push</li>
+    <li><strong>Píxeles de seguimiento</strong> — en campañas de marketing, si están activas</li>
+  </ul>
+
+  <h2>4. Apps móviles</h2>
+  <p>
+    Las aplicaciones móviles de {SITE.name} pueden almacenar datos localmente en tu dispositivo (tokens de sesión,
+    preferencias, caché). Puedes eliminar estos datos desinstalando la app o borrando datos de la app en la
+    configuración de tu dispositivo.
+  </p>
+
+  <h2>5. Cómo gestionar las cookies</h2>
+  <p>Puedes controlar o eliminar cookies desde la configuración de tu navegador:</p>
+  <ul>
+    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+    <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+    <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
+    <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+  </ul>
+  <p>
+    Si deshabilitas cookies necesarias, algunas funciones del sitio o la plataforma podrían no funcionar correctamente.
+  </p>
+
+  <h2>6. Más información</h2>
+  <p>
+    Para detalles sobre el tratamiento de datos personales, consulta nuestro
+    <a href={LEGAL_URLS.privacy}>Aviso de privacidad</a>.
+  </p>
+
+  <h2>7. Contacto</h2>
+  <p>
+    <a href={`mailto:${SITE.privacyEmail}`}>{SITE.privacyEmail}</a>
+  </p>
+</LegalLayout>

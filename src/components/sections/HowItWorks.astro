@@ -1,0 +1,59 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Conecta tu WhatsApp',
+    description:
+      'Vincula el número de tu restaurante con OrdenYa. Los pedidos que lleguen por WhatsApp se organizan automáticamente.',
+  },
+  {
+    number: '02',
+    title: 'Configura tu menú',
+    description:
+      'Carga tus productos, precios y categorías. Tu equipo y tus clientes siempre verán información actualizada.',
+  },
+  {
+    number: '03',
+    title: 'Recibe y confirma pedidos',
+    description:
+      'Cada pedido aparece en el panel con el detalle del cliente. Confírmalo, asígnalo a cocina y da seguimiento.',
+  },
+  {
+    number: '04',
+    title: 'Administra tu negocio',
+    description:
+      'Revisa ventas, controla inventario, registra egresos y toma decisiones con datos reales de tu operación.',
+  },
+];
+---
+
+<section id="como-funciona" class="border-y border-stone-200/80 bg-white py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading
+      eyebrow="Cómo funciona"
+      title="De WhatsApp a pedido confirmado en minutos"
+      description="Sin apps complicadas para tus clientes. Ellos siguen pidiendo por WhatsApp; tú operas con orden."
+    />
+
+    <ol class="relative mt-16 grid gap-8 md:grid-cols-4">
+      <div
+        class="pointer-events-none absolute left-0 right-0 top-8 hidden h-0.5 bg-gradient-to-r from-brand-200 via-brand-400 to-brand-200 md:block"
+        aria-hidden="true"
+      />
+
+      {
+        steps.map((step) => (
+          <li class="relative text-center md:text-left">
+            <div class="relative mx-auto flex size-16 items-center justify-center rounded-2xl border-2 border-brand-200 bg-white shadow-md shadow-brand-600/10 md:mx-0">
+              <span class="text-lg font-extrabold text-brand-600">{step.number}</span>
+            </div>
+            <h3 class="mt-5 text-lg font-bold text-stone-900">{step.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-stone-600">{step.description}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

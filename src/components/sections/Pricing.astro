@@ -1,0 +1,111 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import WhatsAppButton from '../ui/WhatsAppButton.astro';
+
+const plans = [
+  {
+    name: 'Básico',
+    price: '$499',
+    period: '/mes',
+    description: 'Ideal para negocios pequeños que empiezan a ordenar sus pedidos.',
+    features: [
+      'Hasta 200 pedidos/mes',
+      '1 usuario',
+      'Panel de pedidos WhatsApp',
+      'Menú digital',
+      'Reporte de ventas básico',
+    ],
+    highlighted: false,
+  },
+  {
+    name: 'Profesional',
+    price: '$899',
+    period: '/mes',
+    description: 'Para restaurantes con volumen que necesitan control completo.',
+    features: [
+      'Pedidos ilimitados',
+      'Hasta 5 usuarios',
+      'Inventario y alertas',
+      'Control de egresos',
+      'Reportes avanzados',
+      'Soporte prioritario',
+    ],
+    highlighted: true,
+    badge: 'Más popular',
+  },
+  {
+    name: 'Empresa',
+    price: 'A medida',
+    period: '',
+    description: 'Para cadenas o negocios con múltiples sucursales.',
+    features: [
+      'Multi-sucursal',
+      'Usuarios ilimitados',
+      'Integraciones personalizadas',
+      'Capacitación del equipo',
+      'Gerente de cuenta dedicado',
+    ],
+    highlighted: false,
+  },
+];
+---
+
+<section id="precios" class="bg-stone-50 py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading
+      eyebrow="Precios"
+      title="Planes que crecen con tu restaurante"
+      description="Sin contratos largos. Prueba gratis y elige el plan que mejor se adapte a tu operación."
+    />
+
+    <ul class="mt-16 grid items-center gap-6 lg:grid-cols-3">
+      {
+        plans.map((plan) => (
+          <li
+            class:list={[
+              'card-hover relative flex flex-col rounded-2xl border p-8',
+              plan.highlighted
+                ? 'z-10 scale-100 border-brand-500 bg-white shadow-2xl shadow-brand-600/15 ring-2 ring-brand-500/20 lg:scale-105'
+                : 'border-stone-200 bg-white shadow-sm',
+            ]}
+          >
+            {plan.badge && (
+              <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-brand-600 to-brand-700 px-4 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-md">
+                {plan.badge}
+              </span>
+            )}
+            <h3 class="text-lg font-bold text-stone-900">{plan.name}</h3>
+            <div class="mt-4 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold tracking-tight text-stone-900">{plan.price}</span>
+              {plan.period && <span class="text-stone-500">{plan.period}</span>}
+            </div>
+            <p class="mt-3 text-sm text-stone-600">{plan.description}</p>
+            <ul class="mt-6 flex-1 space-y-3 border-t border-stone-100 pt-6">
+              {plan.features.map((feature) => (
+                <li class="flex items-start gap-2.5 text-sm text-stone-700">
+                  <span class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-100">
+                    <svg class="size-3 text-brand-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-8">
+              <WhatsAppButton
+                label={plan.name === 'Empresa' ? 'Contactar ventas' : 'Empezar prueba gratis'}
+                message={`Hola, me interesa el plan ${plan.name} de OrdenYa.`}
+                class={`w-full justify-center ${plan.highlighted ? '' : '!bg-stone-900 hover:!bg-stone-800 !from-stone-900 !to-stone-800'}`}
+              />
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="mt-10 text-center text-sm text-stone-500">
+      Todos los planes incluyen <strong class="font-semibold text-stone-700">14 días de prueba gratis</strong>. Sin tarjeta de crédito.
+    </p>
+  </div>
+</section>
